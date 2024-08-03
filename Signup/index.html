@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>Sign Up Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./pngtree-forest-green-light-green-path-background-picture-image_2164995.jpg');
+        }
+        .sign-up-form {
+            width: 350px;
+            box-pack: 0 0 3px 0 rgba(219, 217, 217, 0.3);
+            background: transparent;
+            backdrop-filter: blur(50px);
+            padding: 20px;
+            margin: 8% auto 0;
+            text-align: center;
+            border-radius: 30px;
+            height: 500px;
+            top: 100px;
+        }
+        .sign-up-form h1 {
+            color: #d0d4d5b2 margin-bottom: 30px;
+        }
+        .input-box {
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #999;
+            outline: none;
+        }
+        button {
+            color: #ffffffb1;
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 15px;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .signup-btn {
+            background-color: #bd1c3740;
+        }
+        .siggnup-btn {
+            background-color: #bd1c3740;
+        }
+        .or {
+            background: #ffffffbd;
+            width: 30px;
+            margin: -20px auto 10px;
+        }
+        button[type="signup-btn"]:hover {
+            background-color: #f9f9fb;
+        }
+    </style>
+</head>
+<body>
+    <div class="sign-up-form">
+        <h1>Sign Up Now</h1>
+        <form id="signupForm">
+            <input type="email" class="input-box" id="emailInput" placeholder="Your Email" required/>
+            <input type="password" class="input-box" id="passwordInput" placeholder="Your Password" required/>
+            <p>
+                <span><input type="checkbox" id="agreeCheckbox" /></span> I agree to
+                the terms and conditions
+            </p>
+            <button type="button" class="signup-btn" id="signupButton">
+                Sign up</button><br />
+            <hr />
+            <p class="or">OR</p>
+            <button type="button" class="siggnup-btn">Login with Facebook</button>
+            <p>
+                Already have an account? <a href="../Signin/index.html">Sign in</a>
+            </p>
+        </form>
+    </div>
+    <script>
+        document
+            .getElementById("signupButton")
+            .addEventListener("click", function () {
+                var email = document.getElementById("emailInput").value;
+                var password = document.getElementById("passwordInput").value;
+                var passwordPattern =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+                var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid Gmail address.");
+                    return;
+                }
+                if (!passwordPattern.test(password)) {
+                    alert("Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.");
+                    return;
+                }
+                var agreeCheckbox = document.getElementById("agreeCheckbox");
+                if (!agreeCheckbox.checked) {
+                    alert("Please agree to the terms and conditions.");
+                    return;
+                }
+                alert("Sign up successful! Email: " + email + ", Password: " + password);
+            });
+    </script>
+</body>
+</html>

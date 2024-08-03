@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waste Management</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <style>
+      .waste-image {
+        width: 65%;
+        height: auto;
+        margin-left: 17.5%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Waste Management: Reduce, Reuse, Recycle</h1>
+      <p>Creating a Sustainable Future</p>
+    </header>
+
+    <nav>
+      <ol>
+        <li><a href="../Signin/index.html">Signin</a></li>
+        <li><a href="../mypage/src/index.html"></a></li>
+        <li><a href="../Signup/index.html">Signup</a></li>
+        <li><a href="../learn/index.html">Learning</a></li>
+        <li><a href="../Exam/index.html">Test</a></li>
+        <li><a href="../Feedback/index.html">Feedback</a></li>
+      </ol>
+      <br />
+      <hr />
+    </nav>
+    <br />
+    <img src="./2.jpg" class="waste-image" alt="Waste Management Image" />
+    <br />
+    <footer>
+      <div>
+        <h3>Contact Us</h3>
+        <p>If you have any questions or concerns, feel free to contact us:</p>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required /><br />
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required
+          /><br />
+          <textarea id="message" placeholder="Your Message" required></textarea
+          ><br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <hr />
+      <div>
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+      <hr />
+      <div>
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+        </ul>
+      </div>
+      <hr />
+      <br />
+      <p>&copy; 2024 Waste Management Website</p>
+    </footer>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("message").value;
+          if (
+            name.trim() === "" ||
+            email.trim() === "" ||
+            message.trim() === ""
+          ) {
+            alert("Please fill in all fields.");
+            return;
+          }
+          console.log("Name: " + name);
+          console.log("Email: " + email);
+          console.log("Message: " + message);
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+          alert("Message sent successfully!");
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI";
+      }
+      body {
+        min-height: 100vh;
+        background-color: rgb(44, 29, 73);
+        background: url(./photo-1507679826810-8e7b0e6957b0.jpeg) no-repeat;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-position: center;
+      }
+      .wrapper {
+        margin-top: 50px;
+        width: 420px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 10px rgb(0, 0, 0, 0.4);
+        color: white;
+        border-radius: 10px;
+        padding: 30px 40px;
+      }
+      .wrapper h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+      .wrapper .input-box {
+        width: 100%;
+        height: 50px;
+        margin: 30px 0;
+      }
+      .input-box input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgb(229, 229, 229);
+        border-radius: 40px;
+        font-size: 16px;
+        color: white;
+        padding: 20px;
+      }
+      .input-box .input-box::placeholder {
+        color: white;
+      }
+      .wrapper .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14.5px;
+        margin: -15px 0 15px;
+      }
+      .remember-forgot label input {
+        margin-right: 3px;
+        accent-color: white;
+      }
+      .remember-forgot a {
+        color: white;
+        text-decoration: none;
+      }
+      .remember-forgot a:hover {
+        text-decoration: underline;
+      }
+      .wrapper .btn {
+        width: 100%;
+        height: 45px;
+        background: white;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, -1);
+        cursor: pointer;
+        font: 16px;
+        color: #333;
+        font-weight: 600;
+      }
+      .wrapper .register-link {
+        font-size: 14.5px;
+        text-align: center;
+        margin: 20px 0 15px;
+      }
+      .register-link p a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .register-link p a:hover {
+        text-decoration: underline;
+      }
+      .feedback a {
+        color: white;
+        text-decoration: none;
+      }
+      .support {
+        margin: 10px;
+        position: 10px 10px;
+      }
+      .feedback-link {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+        text-decoration: none;
+      }
+      .InfoLearn {
+        width: 50%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 50px;
+        word-spacing: 2px;
+        border-radius: 10px;
+        color: white;
+        font-size: large;
+        background: transparent;
+      }
+      textarea {
+        width: 100%;
+        height: 130%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgb(229, 229, 229);
+        border-radius: 40px;
+        font-size: 16px;
+        color: white;
+        padding: 20px;
+        resize: none;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="" class="registration-form" id="feedbackForm">
+        <h1>Feedback Form</h1>
+        <div class="input-box">
+          <input type="text" id="username" placeholder="Username" required />
+        </div>
+        <div class="input-box">
+          <input type="email" id="email" placeholder="Email" required />
+        </div>
+        <div class="input-box">
+          <input
+            type="text"
+            id="contactNo"
+            placeholder="Contact No."
+            required
+          />
+        </div>
+        <div class="input-box">
+          <input type="text" id="feedback" placeholder="Feedback" required />
+        </div>
+        <div class="input-box">
+          <input
+            type="text"
+            id="suggestion"
+            placeholder="Any other Suggestion??"
+            required
+          />
+        </div>
+        <button type="submit" class="btn" id="submitButton">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var username = document.getElementById("username").value;
+          var email = document.getElementById("email").value;
+          var contactNo = document.getElementById("contactNo").value;
+          var feedback = document.getElementById("feedback").value;
+          var suggestion = document.getElementById("suggestion").value;
+          var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
+          var contactNoPattern = /^\d{10}$/;
+          if (!emailPattern.test(email)) {
+            alert("Please enter a valid Gmail address.");
+            return;
+          }
+          if (!contactNoPattern.test(contactNo)) {
+            alert("Please enter a valid 10-digit contact number.");
+            return;
+          }
+          alert("Feedback submitted successfully!");
+          window.location.href = "../Home/index.html";
+        });
+    </script>
+  </body>
+</html>
