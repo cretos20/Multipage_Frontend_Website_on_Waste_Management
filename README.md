@@ -5,7 +5,7 @@
 The Waste Management Website is a multipage web application designed to educate and engage users on the topic of waste management. Developed using HTML, CSS, and JavaScript, the site features a homepage, sign-in and sign-up pages, an interactive quiz, learning resources, and a feedback form. It utilizes core web technologies to provide a responsive and interactive user experience.
 
 ## Demo Link
-<a href="">Demo link</a>
+<a href="https://drive.google.com/file/d/1UPrhY4TG6OxiF0gkY_Jv0WzcIbckYbIm/view?usp=sharing">Demo link</a>
 ## Features
 
 - **Homepage**: Provides an introduction to waste management and site navigation.
@@ -28,7 +28,7 @@ To run this project locally, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/waste-management-website.git
+   git clone https://github.com/cretos20/Multipage_Frontend_Website_on_Waste_Management.git
 2. **Navigate to the project directory:**
     ```bash
     cd Multipage_Frontend_Website_on_Waste_Management
